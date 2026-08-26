@@ -1,0 +1,24 @@
+{
+    "name": "habeuk/ai-agent-bundle",
+    "description": "Permet de mettre en place un agent AI",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Habeuk\\AiAgentBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "kouwa stephane",
+            "email": "kksasteph888@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+		"symfony/ai-agent": "^0.12.0",
+        "symfony/ai-bundle": "^0.12.0",
+        "symfony/ai-deep-seek-platform": "^0.12.0",
+        "symfony/ai-gemini-platform": "^0.12.0"
+    }
+}
