@@ -3,17 +3,17 @@ namespace Habeuk\AiAgentBundle\Entity;
 
 use Habeuk\HbkSymfony\Attribute\MenuFrontendConfig;
 use Habeuk\HbkSymfony\Enum\PermissionEnum;
-use Habeuk\HbkSymfony\Enum\ScopeEnum;
+use App\Enum\ScopeEnum;
 use Habeuk\AiAgentBundle\Repository\ProjectRepository;
-use App\Shared\Doctrine\AbstractBaseEntity;
-use App\Shared\Doctrine\Traits\OwnerTrait;
-use App\Shared\Doctrine\Traits\ {
+use Habeuk\HbkSymfony\Shared\Doctrine\AbstractBaseEntity;
+use Habeuk\HbkSymfony\Shared\Doctrine\Traits\OwnerTrait;
+use Habeuk\HbkSymfony\Shared\Doctrine\Traits\ {
   TimestampableTrait,
   StatusTrait,
   UuidTrait
 };
-use App\Contract\OwnerInterface;
-use App\Contract\StatusEntityInterface;
+use Habeuk\HbkSymfony\Contract\OwnerInterface;
+use Habeuk\HbkSymfony\Contract\StatusEntityInterface;
 use Habeuk\AiAgentBundle\DTO\ProjectDto;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;

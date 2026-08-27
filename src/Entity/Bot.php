@@ -4,17 +4,17 @@ namespace Habeuk\AiAgentBundle\Entity;
 
 use Habeuk\HbkSymfony\Attribute\MenuFrontendConfig;
 use Habeuk\HbkSymfony\Enum\PermissionEnum;
-use Habeuk\HbkSymfony\Enum\ScopeEnum;
+use App\Enum\ScopeEnum;
 use Habeuk\AiAgentBundle\Enum\AiModelEnum;
-use App\Contract\OwnerInterface;
-use App\Contract\StatusEntityInterface;
+use Habeuk\HbkSymfony\Contract\OwnerInterface;
+use Habeuk\HbkSymfony\Contract\StatusEntityInterface;
 use Habeuk\AiAgentBundle\DTO\BotDto;
 use Habeuk\AiAgentBundle\Repository\BotRepository;
-use App\Shared\Doctrine\AbstractBaseEntity;
-use App\Shared\Doctrine\Traits\OwnerTrait;
-use App\Shared\Doctrine\Traits\StatusTrait;
-use App\Shared\Doctrine\Traits\TimestampableTrait;
-use App\Shared\Doctrine\Traits\UuidTrait;
+use Habeuk\HbkSymfony\Shared\Doctrine\AbstractBaseEntity;
+use Habeuk\HbkSymfony\Shared\Doctrine\Traits\OwnerTrait;
+use Habeuk\HbkSymfony\Shared\Doctrine\Traits\StatusTrait;
+use Habeuk\HbkSymfony\Shared\Doctrine\Traits\TimestampableTrait;
+use Habeuk\HbkSymfony\Shared\Doctrine\Traits\UuidTrait;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -509,7 +509,7 @@ class Bot extends AbstractBaseEntity implements StatusEntityInterface, OwnerInte
       $reasons[] = sprintf('Historique trop long (%d messages)', $this->messageCount);
     }
 
-    if (! empty($reasons)) {
+    if ($reasons !== []) {
       $this->needsNewBot = true;
       $this->alertReason = implode(' | ', $reasons);
       $this->lastAlertAt = new \DateTimeImmutable();
