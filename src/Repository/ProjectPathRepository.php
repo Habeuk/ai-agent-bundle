@@ -4,7 +4,7 @@ namespace Habeuk\AiAgentBundle\Repository;
 
 use Habeuk\AiAgentBundle\Entity\Project;
 use Habeuk\AiAgentBundle\Entity\ProjectPath;
-use App\Security\QueryFilter\EntityVisibilityFilter;
+use Habeuk\HbkSymfony\Security\QueryFilter\EntityVisibilityFilter;
 use Doctrine\Persistence\ManagerRegistry;
 use Habeuk\HbkSymfony\Repository\BaseRepository;
 
