@@ -9,7 +9,6 @@ use Habeuk\HbkSymfony\Attribute\ {
 use Habeuk\AiAgentBundle\Entity\ {
   Project,
   ProjectPath,
-  Resource,
   Bot
 };
 use Habeuk\HbkSymfony\Enum\ColumnType;
@@ -27,7 +26,6 @@ class ProjectDto extends BaseDto {
 
   function __construct() {
     $this->projectPaths = new ArrayCollection();
-    $this->resources = new ArrayCollection();
     $this->bots = new ArrayCollection();
   }
 
@@ -42,18 +40,6 @@ class ProjectDto extends BaseDto {
   #[ColumnLabel('lines object', order: 10)]
   #[EntityCollectionReference(entityClass: ProjectPath::class)]
   public Collection|array $projectPaths;
-
-  /**
-   *
-   * @var Collection<int, \Habeuk\AiAgentBundle\Entity\Resource>|array<int,int>
-   */
-  #[Groups([
-    self::LIST,
-    self::VIEW
-  ])]
-  #[ColumnLabel('lines object', order: 10)]
-  #[EntityCollectionReference(entityClass: Resource::class)]
-  public Collection|array $resources;
 
   /**
    *

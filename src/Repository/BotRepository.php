@@ -7,6 +7,7 @@ use Habeuk\AiAgentBundle\Entity\Project;
 use App\Security\QueryFilter\EntityVisibilityFilter;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Uid\Uuid;
+use Habeuk\HbkSymfony\Repository\BaseRepository;
 
 /**
  *

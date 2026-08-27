@@ -2,13 +2,13 @@
 declare(strict_types = 1);
 namespace Habeuk\AiAgentBundle\Entity;
 
-use App\Attribute\MenuFrontendConfig;
-use App\Enum\PermissionEnum;
-use App\Enum\ScopeEnum;
+use Habeuk\HbkSymfony\Attribute\MenuFrontendConfig;
+use Habeuk\HbkSymfony\Enum\PermissionEnum;
+use Habeuk\HbkSymfony\Enum\ScopeEnum;
 use App\Contract\OwnerInterface;
 use App\Contract\StatusEntityInterface;
-use App\DTO\ProjectPathDto;
-use App\Repository\ProjectPathRepository;
+use Habeuk\AiAgentBundle\DTO\ProjectPathDto;
+use Habeuk\AiAgentBundle\Repository\ProjectPathRepository;
 use App\Shared\Doctrine\AbstractBaseEntity;
 use App\Shared\Doctrine\Traits\OwnerTrait;
 use App\Shared\Doctrine\Traits\StatusTrait;

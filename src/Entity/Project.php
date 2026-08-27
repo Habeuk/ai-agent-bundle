@@ -1,10 +1,10 @@
 <?php
 namespace Habeuk\AiAgentBundle\Entity;
 
-use App\Attribute\MenuFrontendConfig;
-use App\Enum\PermissionEnum;
-use App\Enum\ScopeEnum;
-use App\Repository\ProjectRepository;
+use Habeuk\HbkSymfony\Attribute\MenuFrontendConfig;
+use Habeuk\HbkSymfony\Enum\PermissionEnum;
+use Habeuk\HbkSymfony\Enum\ScopeEnum;
+use Habeuk\AiAgentBundle\Repository\ProjectRepository;
 use App\Shared\Doctrine\AbstractBaseEntity;
 use App\Shared\Doctrine\Traits\OwnerTrait;
 use App\Shared\Doctrine\Traits\ {
@@ -14,7 +14,7 @@ use App\Shared\Doctrine\Traits\ {
 };
 use App\Contract\OwnerInterface;
 use App\Contract\StatusEntityInterface;
-use App\DTO\ProjectDto;
+use Habeuk\AiAgentBundle\DTO\ProjectDto;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -57,16 +57,6 @@ class Project extends AbstractBaseEntity implements StatusEntityInterface, Owner
 
   /**
    *
-   * @var Collection<int, Resource>
-   */
-  #[ORM\OneToMany(mappedBy: 'project', targetEntity: Resource::class, cascade: [
-    'persist',
-    'remove'
-  ], orphanRemoval: true)]
-  private Collection $resources;
-
-  /**
-   *
    * @var Collection<int, Bot>
    */
   #[ORM\OneToMany(mappedBy: 'project', targetEntity: Bot::class, cascade: [
@@ -77,7 +67,6 @@ class Project extends AbstractBaseEntity implements StatusEntityInterface, Owner
 
   public function __construct() {
     $this->projectPaths = new ArrayCollection();
-    $this->resources = new ArrayCollection();
     $this->bots = new ArrayCollection();
     $now = new \DateTimeImmutable();
     $this->createdAt = $now;
@@ -140,33 +129,6 @@ class Project extends AbstractBaseEntity implements StatusEntityInterface, Owner
       $projectPath->getProjects()->removeElement($this);
     }
     $this->projectPaths->clear();
-    return $this;
-  }
-
-  // === Resource ===
-
-  /**
-   *
-   * @return Collection<int, Resource>
-   */
-  public function getResources(): Collection {
-    return $this->resources;
-  }
-
-  public function addResource(Resource $resource): static {
-    if (! $this->resources->contains($resource)) {
-      $this->resources->add($resource);
-      $resource->setProject($this);
-    }
-    return $this;
-  }
-
-  public function removeResource(Resource $resource): static {
-    if ($this->resources->removeElement($resource)) {
-      if ($resource->getProject() === $this) {
-        $resource->setProject(null);
-      }
-    }
     return $this;
   }
 

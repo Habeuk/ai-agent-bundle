@@ -2,7 +2,7 @@
 declare(strict_types = 1);
 namespace Habeuk\AiAgentBundle\DTO;
 
-use App\Attribute\ {
+use Habeuk\HbkSymfony\Attribute\ {
   ColumnLabel,
   EntityReference
 };

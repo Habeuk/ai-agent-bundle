@@ -2,12 +2,12 @@
 declare(strict_types = 1);
 namespace Habeuk\AiAgentBundle\Entity;
 
-use App\Attribute\MenuFrontendConfig;
-use App\DTO\MessageDto;
-use App\Enum\PermissionEnum;
-use App\Enum\ScopeEnum;
-use App\Enum\MessageRoleEnum;
-use App\Repository\MessageRepository;
+use Habeuk\HbkSymfony\Attribute\MenuFrontendConfig;
+use Habeuk\AiAgentBundle\DTO\MessageDto;
+use Habeuk\HbkSymfony\Enum\PermissionEnum;
+use Habeuk\HbkSymfony\Enum\ScopeEnum;
+use Habeuk\AiAgentBundle\Enum\MessageRoleEnum;
+use Habeuk\AiAgentBundle\Repository\MessageRepository;
 use App\Shared\Doctrine\AbstractBaseEntity;
 use App\Shared\Doctrine\Traits\StatusTrait;
 use App\Shared\Doctrine\Traits\TimestampableTrait;

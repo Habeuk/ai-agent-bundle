@@ -2,7 +2,7 @@
 declare(strict_types = 1);
 namespace Habeuk\AiAgentBundle\DTO;
 
-use App\Attribute\ {
+use Habeuk\HbkSymfony\Attribute\ {
   ColumnLabel,
   EntityReference,
   EntityCollectionReference
@@ -11,7 +11,7 @@ use Habeuk\AiAgentBundle\Entity\ {
   ProjectPath,
   Project
 };
-use App\Enum\ColumnType;
+use Habeuk\HbkSymfony\Enum\ColumnType;
 use Symfony\Component\ObjectMapper\Attribute\Map;
 use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -88,7 +88,7 @@ class ProjectPathDto extends BaseDto {
 
   /**
    *
-   * @var Collection<int, \App\Entity\Project>|array<int,int>
+   * @var Collection<int, \Habeuk\AiAgentBundle\Entity\Project>|array<int,int>
    */
   #[Groups([
     self::LIST,

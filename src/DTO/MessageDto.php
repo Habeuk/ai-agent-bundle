@@ -2,7 +2,7 @@
 declare(strict_types = 1);
 namespace Habeuk\AiAgentBundle\DTO;
 
-use App\Attribute\ColumnLabel;
+use Habeuk\HbkSymfony\Attribute\ColumnLabel;
 use Habeuk\AiAgentBundle\Entity\Message;
 use Habeuk\HbkSymfony\Enum\ColumnType;
 use Habeuk\AiAgentBundle\Enum\MessageRoleEnum;

@@ -2,7 +2,7 @@
 declare(strict_types = 1);
 namespace Habeuk\AiAgentBundle\Entity;
 
-use App\Attribute\MenuFrontendConfig;
+use Habeuk\HbkSymfony\Attribute\MenuFrontendConfig;
 use Habeuk\HbkSymfony\Enum\PermissionEnum;
 use Habeuk\HbkSymfony\Enum\ScopeEnum;
 use Habeuk\AiAgentBundle\Enum\AiModelEnum;
