@@ -16,6 +16,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
+    	"habeuk/habeuk_base_symfony": "^1.0.0|1.x-dev",
 		"symfony/ai-agent": "^0.12.0",
         "symfony/ai-bundle": "^0.12.0",
         "symfony/ai-deep-seek-platform": "^0.12.0",
