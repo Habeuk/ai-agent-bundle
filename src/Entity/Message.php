@@ -12,13 +12,13 @@ use Habeuk\HbkSymfony\Shared\Doctrine\AbstractBaseEntity;
 use Habeuk\HbkSymfony\Shared\Doctrine\Traits\StatusTrait;
 use Habeuk\HbkSymfony\Shared\Doctrine\Traits\TimestampableTrait;
 use Habeuk\HbkSymfony\Shared\Doctrine\Traits\UuidTrait;
-use App\Shared\Doctrine\Traits\OwnerTrait;
+use Habeuk\HbkSymfony\Shared\Doctrine\Traits\OwnerTrait;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\ObjectMapper\Attribute\Map;
 use Symfony\Component\Validator\Constraints as Assert;
-use App\Contract\OwnerInterface;
-use App\Contract\StatusEntityInterface;
+use Habeuk\HbkSymfony\Contract\OwnerInterface;
+use Habeuk\HbkSymfony\Contract\StatusEntityInterface;
 
 #[Map(target: MessageDto::class)]
 #[ORM\Entity(repositoryClass: MessageRepository::class)]
